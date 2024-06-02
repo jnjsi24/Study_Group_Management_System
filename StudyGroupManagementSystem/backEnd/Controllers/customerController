@@ -1,0 +1,103 @@
+const bcrypt = require('bcrypt');
+const Customer = require('../Models/customers');
+const Subject = require('../Models/subjects');
+
+// CRUD operations
+module.exports = {
+  createCustomer: async (req, res) => {
+    try {
+      const { userName, email, subjectIds, contactNumber, password } = req.body;
+
+      const hashedPassword = await bcrypt.hash(password, 10);
+
+      const newCustomer = new Customer({
+        userName,
+        email,
+        subjects: subjectIds, // Changed to subjectIds
+        contactNumber,
+        password: hashedPassword
+      });
+
+      const savedCustomer = await newCustomer.save();
+
+      res.status(201).json(savedCustomer);
+    } catch (err) {
+      res.status(400).json({ error: err.message || "Failed to create customer" });
+    }
+  },
+
+  getCustomers: async (req, res) => {
+    try {
+      const customers = await Customer.find().populate('subjects');
+
+      if (!customers || customers.length === 0) {
+        return res.status(404).json({ error: "No customers found" });
+      }
+
+      res.status(200).json(customers);
+    } catch (err) {
+      res.status(500).json({ error: err.message || "Failed to retrieve customers" });
+    }
+  },
+
+  getCustomerById: async (req, res) => {
+    try {
+      const customerId = req.params.id;
+
+      const customer = await Customer.findById(customerId);
+
+      if (!customer) {
+        return res.status(404).json({ error: `Customer with ID ${customerId} not found` });
+      }
+
+      res.status(200).json(customer);
+    } catch (err) {
+      res.status(500).json({ error: err.message || "Failed to retrieve customer" });
+    }
+  },
+
+  queryCustomerByName: async (req, res) => {
+    try {
+      const queryUserName = req.query.userName;
+
+      const customers = await Customer.find({ userName: queryUserName });
+
+      res.status(200).json(customers);
+    } catch (err) {
+      res.status(500).json({ error: err.message || "Failed to query customers by name" });
+    }
+  },
+
+  updateCustomer: async (req, res) => {
+    try {
+      const customerId = req.params.id;
+      const updatedDetails = req.body;
+
+      const updatedCustomer = await Customer.findByIdAndUpdate(customerId, updatedDetails, { new: true });
+
+      if (!updatedCustomer) {
+        return res.status(404).json({ error: `Customer with ID ${customerId} not found` });
+      }
+
+      res.status(200).json(updatedCustomer);
+    } catch (err) {
+      res.status(400).json({ error: err.message || "Failed to update customer" });
+    }
+  },
+
+  deleteCustomer: async (req, res) => {
+    try {
+      const customerId = req.params.id;
+
+      const deletedCustomer = await Customer.findByIdAndDelete(customerId);
+
+      if (!deletedCustomer) {
+        return res.status(404).json({ error: `Customer with ID ${customerId} not found` });
+      }
+
+      res.status(200).json({ message: `Customer ${customerId} deleted successfully` });
+    } catch (err) {
+      res.status(500).json({ error: err.message || "Failed to delete customer" });
+    }
+  }
+};

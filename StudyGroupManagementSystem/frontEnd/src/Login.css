@@ -1,0 +1,71 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #5a3d2b; /* Brown background color */
+  text-align: center; /* Center align text within the container */
+}
+
+.project-title {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px; /* Add some space below the title */
+}
+
+.login-form {
+  width: 400px;
+  padding: 40px;
+  background-color: rgba(198, 197, 197, 0.736);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  transition: border-bottom-color 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-bottom-color: #66fcf1;
+}
+
+.error-message {
+  color: #ff5252;
+  margin-bottom: 10px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-button,
+.create-account-button {
+  width: 48%; /* Set width to 48% to ensure they fit side by side with some spacing */
+  background-color: #f5f5dc; /* Beige background color */
+  color: #5a3d2b; /* Brown text color */
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.login-button:hover,
+.create-account-button:hover {
+  background-color: #e5e5c4; /* Slightly darker beige on hover */
+  color: #fff; /* White text color on hover */
+}

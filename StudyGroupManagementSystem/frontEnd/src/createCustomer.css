@@ -1,0 +1,46 @@
+.create-customer-container {
+  max-width: 600px; /* Increased the max width */
+  margin: 0 auto;
+  padding: 40px; /* Increased the padding */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #8B4513; /* Brown background color */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Increased the margin-bottom for better spacing */
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: #fff; /* White text color for better readability */
+  margin-bottom: 5px; /* Added margin-bottom for spacing between label and input */
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #D2B48C; /* Light brown color for text box */
+  color: #333; /* Dark text color for readability */
+  box-sizing: border-box; /* Ensure padding doesn't affect the width */
+}
+
+button[type='submit'] {
+  width: 100%;
+  padding: 15px; /* Increased padding for a larger button */
+  border: none;
+  border-radius: 5px;
+  background-color: #F5F5DC; /* Beige color for button */
+  color: #333; /* Dark text color for readability */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type='submit']:hover {
+  background-color: #DEB887; /* Darker beige color on hover */
+}

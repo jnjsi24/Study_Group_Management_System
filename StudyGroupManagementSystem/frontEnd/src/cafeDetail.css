@@ -1,0 +1,111 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #8B4513; /* Brown background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Align items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.container .cafe-image {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 32px;
+  color: #fff; /* White color for the café name */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.container p {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #fff; /* White text color */
+}
+
+.address {
+  text-align: center; /* Center align the address */
+  font-size: 18px;
+  color: #fff; /* White text color */
+}
+
+.container button {
+  display: block;
+  margin: 10px auto; /* Adjusted margin for better spacing */
+  padding: 10px 20px; /* Increased padding for better button size */
+  background-color: #8B4513; /* Brown color for button */
+  color: #F5F5DC; /* Beige color for text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.container button:hover {
+  background-color: #A0522D; /* Darker brown color on hover */
+}
+
+.booking-form,
+.create-form {
+  background-color: #8B4513; /* Brown color for form background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.booking-form h3,
+.create-form h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #F5F5DC; /* Beige color for form titles */
+}
+
+.booking-form label,
+.create-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #F5F5DC; /* Beige color for labels */
+}
+
+.booking-form select,
+.create-form input {
+  width: 100%;
+  padding: 10px; /* Increased padding for better input size */
+  margin-bottom: 20px;
+  border: 1px solid #F5F5DC; /* Beige border */
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #8B4513; /* Brown color for input background */
+  color: #F5F5DC; /* Beige color for input text */
+}
+
+.booking-form button,
+.create-form button {
+  display: block;
+  width: 100%;
+  padding: 12px 20px; /* Increased padding for better button size */
+  background-color: #8B4513; /* Brown color for button */
+  color: #F5F5DC; /* Beige color for text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.booking-form button:hover,
+.create-form button:hover {
+  background-color: #A0522D; /* Darker brown color on hover */
+}
